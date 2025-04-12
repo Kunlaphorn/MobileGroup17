@@ -6,7 +6,7 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productList = [
+    final List<Map<String, dynamic>> productList = [
       {
         "image": "https://i.imgur.com/XkzBlqV.png",
         "name": "centella",
@@ -56,8 +56,8 @@ class SearchPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Expanded(
                             child: TextField(
                               decoration: InputDecoration(
@@ -98,7 +98,7 @@ class SearchPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: GridView.builder(
-                  itemCount: productList.length * 2, // repeat to fill
+                  itemCount: productList.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 12,
@@ -106,7 +106,12 @@ class SearchPage extends StatelessWidget {
                     childAspectRatio: 0.68,
                   ),
                   itemBuilder: (context, index) {
-                    final product = productList[index % productList.length];
+                    final product = productList[index];
+                    final String image = product["image"] as String;
+                    final String name = product["name"] as String;
+                    final String price = product["price"] as String;
+                    final double rating = product["rating"] as double;
+
                     return Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -120,7 +125,7 @@ class SearchPage extends StatelessWidget {
                               top: Radius.circular(16),
                             ),
                             child: Image.network(
-                              product["image"]!,
+                              image,
                               height: 110,
                               width: double.infinity,
                               fit: BoxFit.cover,
@@ -132,7 +137,7 @@ class SearchPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  product["name"]!,
+                                  name,
                                   style: const TextStyle(
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -140,18 +145,18 @@ class SearchPage extends StatelessWidget {
                                 const SizedBox(height: 4),
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.star,
                                       color: Colors.amber,
                                       size: 16,
                                     ),
                                     const SizedBox(width: 4),
-                                    Text(product["rating"].toString()),
+                                    Text(rating.toString()),
                                   ],
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
-                                  product["price"]!,
+                                  price,
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                   ),

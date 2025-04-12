@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/search_page.dart';
+import 'pages/search_page.dart';
 
 void main() => runApp(const EcoGlamApp());
 
@@ -11,6 +13,7 @@ class EcoGlamApp extends StatelessWidget {
       home: const HomePage(),
       theme: ThemeData(fontFamily: 'Arial'),
       debugShowCheckedModeBanner: false,
+      routes: {'/search': (context) => const SearchPage()},
     );
   }
 }
@@ -75,18 +78,26 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 10),
               Align(
                 alignment: Alignment.centerRight,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.lightGreen[100],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: const Text(
-                    "Shop Now !",
-                    style: TextStyle(color: Colors.green),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/search',
+                    ); // ใช้เส้นทางในการนำทาง
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.lightGreen[100],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Text(
+                      "Shop Now !",
+                      style: TextStyle(color: Colors.green),
+                    ),
                   ),
                 ),
               ),
@@ -129,7 +140,7 @@ class HomePage extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
-                  'assets/images/Skincare-Steps-scaled.jpg',
+                  'assets/images/Skincare-Steps-scaled.jpg', // ตรวจสอบว่าไฟล์มีอยู่ในโฟลเดอร์ assets/images
                   fit: BoxFit.cover,
                 ),
               ),
@@ -151,7 +162,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class FilterChipWidget extends StatelessWidget {
+class FilterChipWidget extends StatefulWidget {
   final String text;
   final bool isSelected;
 
@@ -162,15 +173,35 @@ class FilterChipWidget extends StatelessWidget {
   });
 
   @override
+  _FilterChipWidgetState createState() => _FilterChipWidgetState();
+}
+
+class _FilterChipWidgetState extends State<FilterChipWidget> {
+  late bool isSelected;
+
+  @override
+  void initState() {
+    super.initState();
+    isSelected = widget.isSelected;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: isSelected ? Colors.brown[100] : Colors.transparent,
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.brown),
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isSelected = !isSelected;
+        });
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.brown[100] : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.brown),
+        ),
+        child: Text(widget.text, style: const TextStyle(color: Colors.brown)),
       ),
-      child: Text(text, style: const TextStyle(color: Colors.brown)),
     );
   }
 }
@@ -196,7 +227,12 @@ class ProductCard extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
-          child: Image.network(image, fit: BoxFit.cover),
+          child: Image.network(
+            image,
+            width: double.infinity,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
         ),
         Container(
           padding: const EdgeInsets.all(8),
