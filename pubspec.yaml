@@ -54,13 +54,16 @@ dev_dependencies:
 flutter:
 
   # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
+  # in cluded with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
   
   # To add assets to your application, add an assets section, like this:
   assets:
-      - assets/images/Skincare-Steps-scaled.jpg
+     - assets/images/Skincare-Steps-scaled.jpg
+     - assets/images/dd371e0ad448a167b593581ee4380019.jpg
+     - assets/images/573b5df7d1348cf76478adb8936c4d46.jpg
+     
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

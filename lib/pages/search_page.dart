@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
+import 'package:flutter_application_1/pages/product_page.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -8,13 +8,13 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> productList = [
       {
-        "image": "https://i.imgur.com/XkzBlqV.png",
+        "image": "assets/images/dd371e0ad448a167b593581ee4380019.jpg",
         "name": "centella",
         "price": "129 ฿",
         "rating": 5.0,
       },
       {
-        "image": "https://i.imgur.com/VzrI1J7.png",
+        "image": "assets/images/573b5df7d1348cf76478adb8936c4d46.jpg",
         "name": "Anua - peach 70",
         "price": "319 ฿",
         "rating": 5.0,
@@ -116,19 +116,59 @@ class SearchPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            blurRadius: 6,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ClipRRect(
+                          Material(
+                            color: Colors.transparent,
                             borderRadius: const BorderRadius.vertical(
                               top: Radius.circular(16),
                             ),
-                            child: Image.network(
-                              image,
-                              height: 110,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
+                            child: InkWell(
+                              borderRadius: const BorderRadius.vertical(
+                                top: Radius.circular(16),
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:
+                                        (_) => ProductDetailPage(
+                                          image: image,
+                                          name: name,
+                                          price: price,
+                                          rating: rating,
+                                        ),
+                                  ),
+                                );
+                              },
+                              child: ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(16),
+                                ),
+                                child:
+                                    image.startsWith("http")
+                                        ? Image.network(
+                                          image,
+                                          height: 440,
+                                          width: double.infinity,
+                                          fit: BoxFit.cover,
+                                        )
+                                        : Image.asset(
+                                          image,
+                                          height: 440,
+                                          width: double.infinity,
+                                          fit: BoxFit.cover,
+                                        ),
+                              ),
                             ),
                           ),
                           Padding(

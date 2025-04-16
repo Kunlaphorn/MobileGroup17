@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/search_page.dart';
-import 'pages/search_page.dart';
-
-void main() => runApp(const EcoGlamApp());
 
 class EcoGlamApp extends StatelessWidget {
   const EcoGlamApp({super.key});
@@ -57,7 +54,12 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  Icon(Icons.search, size: 28),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/search');
+                    },
+                    child: const Icon(Icons.search, size: 28),
+                  ),
                 ],
               ),
               const SizedBox(height: 20),
@@ -76,27 +78,23 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
-              Align(
+              Container(
                 alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/search',
-                    ); // ใช้เส้นทางในการนำทาง
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/search');
                   },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.lightGreen[100],
+                  icon: const Icon(Icons.shopping_bag),
+                  label: const Text('Shop Now!'),
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.green,
+                    backgroundColor: const Color(0xFFD0F0C0),
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Text(
-                      "Shop Now !",
-                      style: TextStyle(color: Colors.green),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
                     ),
                   ),
                 ),
@@ -140,7 +138,7 @@ class HomePage extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
-                  'assets/images/Skincare-Steps-scaled.jpg', // ตรวจสอบว่าไฟล์มีอยู่ในโฟลเดอร์ assets/images
+                  'assets/images/Skincare-Steps-scaled.jpg',
                   fit: BoxFit.cover,
                 ),
               ),
