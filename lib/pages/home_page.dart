@@ -104,7 +104,8 @@ class HomePage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ProductCard(
-                      image: "https://via.placeholder.com/150",
+                      image:
+                          "assets/images/dd371e0ad448a167b593581ee4380019.jpg",
                       title: "Madagascar Centella Ampoule",
                       brand: "SKIN1004",
                       price: "฿ 478",
@@ -113,7 +114,8 @@ class HomePage extends StatelessWidget {
                   const SizedBox(width: 10),
                   Expanded(
                     child: ProductCard(
-                      image: "https://via.placeholder.com/150/green",
+                      image:
+                          "assets/images/573b5df7d1348cf76478adb8936c4d46.jpg",
                       title: "Torriden Balanceful Cica Calming Serum",
                       brand: "Torriden",
                       price: "฿ 629",
@@ -121,14 +123,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  "https://via.placeholder.com/350x120",
-                  fit: BoxFit.cover,
-                ),
-              ),
+
               const SizedBox(height: 10),
               const Text(
                 "แนะนำการใช้สกินแคร์",
