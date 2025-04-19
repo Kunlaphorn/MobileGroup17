@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "ecoglam",
+			"path": "."
+		},
+		{
+			"name": "assets",
+			"path": "../../MobileGroup17/assets"
+		}
+	],
+	"settings": {}
+}
