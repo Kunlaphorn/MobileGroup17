@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
+=======
+
+void main() {
+  runApp(const MaterialApp(home: AccountPage()));
+}
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
 
+<<<<<<< HEAD
   // ฟังก์ชันสำหรับออกจากระบบ
   Future<void> _logout(BuildContext context) async {
     try {
@@ -27,6 +35,10 @@ class AccountPage extends StatelessWidget {
     // ดึงข้อมูลผู้ใช้จาก Firebase
     User? user = FirebaseAuth.instance.currentUser;
 
+=======
+  @override
+  Widget build(BuildContext context) {
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
     return Scaffold(
       backgroundColor: const Color(0xFFFFFEF8),
       appBar: AppBar(
@@ -51,6 +63,7 @@ class AccountPage extends StatelessWidget {
                   side: BorderSide(color: Colors.brown.shade200),
                 ),
                 child: ListTile(
+<<<<<<< HEAD
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(
                       user?.photoURL ?? 'assets/images/OIP.jpg',
@@ -63,6 +76,17 @@ class AccountPage extends StatelessWidget {
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(user?.email ?? 'jane@example.com'),
+=======
+                  leading: const CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/OIP.jpg'),
+                    radius: 28,
+                  ),
+                  title: const Text(
+                    'Jane Doe',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: const Text('jane@example.com'),
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                   trailing: Icon(Icons.edit, color: Colors.brown),
                 ),
               ),
@@ -124,11 +148,14 @@ class AccountPage extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
       ),
+<<<<<<< HEAD
       floatingActionButton: FloatingActionButton(
         onPressed: () => _logout(context),
         child: const Icon(Icons.exit_to_app),
         backgroundColor: Colors.red,
       ),
+=======
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
     );
   }
 }

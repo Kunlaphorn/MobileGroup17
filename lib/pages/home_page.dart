@@ -1,14 +1,35 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:ecoglam/pages/search_page.dart';
 import 'package:ecoglam/pages/cart_page.dart';
 import 'package:ecoglam/pages/account_page.dart';
+=======
+import 'package:flutter_application_1/pages/search_page.dart';
+
+class EcoGlamApp extends StatelessWidget {
+  const EcoGlamApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: const HomePage(),
+      theme: ThemeData(fontFamily: 'Arial'),
+      debugShowCheckedModeBanner: false,
+      routes: {'/search': (context) => const SearchPage()},
+    );
+  }
+}
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     print("🏠 HOME PAGE LOADED");
+=======
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
     return Scaffold(
       backgroundColor: const Color(0xFFFFFEF8),
       body: SafeArea(
@@ -18,10 +39,20 @@ class HomePage extends StatelessWidget {
             children: [
               Row(
                 children: [
+<<<<<<< HEAD
                   Image.asset(
                     'assets/images/logo.png',
                     width: 40, // ปรับขนาดตามต้องการ
                     height: 40,
+=======
+                  const Text(
+                    "E\nG",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.brown,
+                    ),
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                   ),
                   const SizedBox(width: 10),
                   const Text.rich(
@@ -40,6 +71,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
+<<<<<<< HEAD
                   IconButton(
                     icon: const Icon(Icons.search, size: 28),
                     onPressed: () {
@@ -48,6 +80,13 @@ class HomePage extends StatelessWidget {
                         '/search',
                       ); // ไปที่หน้า SearchPage
                     },
+=======
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/search');
+                    },
+                    child: const Icon(Icons.search, size: 28),
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                   ),
                 ],
               ),
@@ -67,6 +106,7 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
+<<<<<<< HEAD
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
@@ -88,6 +128,25 @@ class HomePage extends StatelessWidget {
                     child: const Text(
                       "Shop Now !",
                       style: TextStyle(color: Colors.green),
+=======
+              Container(
+                alignment: Alignment.centerRight,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/search');
+                  },
+                  icon: const Icon(Icons.shopping_bag),
+                  label: const Text('Shop Now!'),
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.green,
+                    backgroundColor: const Color(0xFFD0F0C0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                     ),
                   ),
                 ),
@@ -97,7 +156,12 @@ class HomePage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ProductCard(
+<<<<<<< HEAD
                       image: "assets/images/cen.png",
+=======
+                      image:
+                          "assets/images/dd371e0ad448a167b593581ee4380019.jpg",
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                       title: "Madagascar Centella Ampoule",
                       brand: "SKIN1004",
                       price: "฿ 478",
@@ -106,7 +170,12 @@ class HomePage extends StatelessWidget {
                   const SizedBox(width: 10),
                   Expanded(
                     child: ProductCard(
+<<<<<<< HEAD
                       image: "assets/images/skin1004-005.jpg",
+=======
+                      image:
+                          "assets/images/573b5df7d1348cf76478adb8936c4d46.jpg",
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                       title: "Torriden Balanceful Cica Calming Serum",
                       brand: "Torriden",
                       price: "฿ 629",
@@ -114,6 +183,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
+<<<<<<< HEAD
               const SizedBox(height: 10),
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
@@ -122,6 +192,9 @@ class HomePage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+=======
+
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
               const SizedBox(height: 10),
               const Text(
                 "แนะนำการใช้สกินแคร์",
@@ -131,7 +204,11 @@ class HomePage extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
+<<<<<<< HEAD
                   'assets/images/Skincare-Steps-scaled.jpg', // ตรวจสอบว่าไฟล์มีอยู่ในโฟลเดอร์ assets/images
+=======
+                  'assets/images/Skincare-Steps-scaled.jpg',
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                   fit: BoxFit.cover,
                 ),
               ),
@@ -148,6 +225,7 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
+<<<<<<< HEAD
         onTap: (index) {
           if (index == 0) {
             Navigator.pushReplacementNamed(
@@ -168,6 +246,8 @@ class HomePage extends StatelessWidget {
             //   ); // Navigate to AccountPage
           }
         },
+=======
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
       ),
     );
   }
@@ -238,6 +318,7 @@ class ProductCard extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
+<<<<<<< HEAD
           child:
               image.startsWith('http')
                   ? Image.network(
@@ -290,6 +371,28 @@ class ProductCard extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
+=======
+          child: Image.network(
+            image,
+            width: double.infinity,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(8),
+          margin: const EdgeInsets.all(6),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.9),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text(brand, style: const TextStyle(fontSize: 12)),
+              Text(price, style: const TextStyle(fontWeight: FontWeight.bold)),
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
             ],
           ),
         ),

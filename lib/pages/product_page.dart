@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:ecoglam/models/product_model.dart'; // นำเข้า Product model
 
 class ProductDetailPage extends StatelessWidget {
@@ -6,6 +7,22 @@ class ProductDetailPage extends StatelessWidget {
 
   // รับค่าผ่าน constructor ที่เป็น Product object
   const ProductDetailPage({super.key, required this.product});
+=======
+
+class ProductDetailPage extends StatelessWidget {
+  final String image;
+  final String name;
+  final String price;
+  final double rating;
+
+  const ProductDetailPage({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.price,
+    required this.rating,
+  });
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +47,11 @@ class ProductDetailPage extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
+<<<<<<< HEAD
                         product.name, // ใช้ข้อมูลจาก product
+=======
+                        name,
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -63,7 +84,11 @@ class ProductDetailPage extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(24),
                       child: Image.asset(
+<<<<<<< HEAD
                         product.image,
+=======
+                        image,
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                         height: 300,
                         width: double.infinity,
                         fit: BoxFit.contain,
@@ -103,7 +128,11 @@ class ProductDetailPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
+<<<<<<< HEAD
                       product.name, // ใช้ข้อมูลจาก product
+=======
+                      name,
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -118,7 +147,11 @@ class ProductDetailPage extends StatelessWidget {
                       children: [
                         const Icon(Icons.star, color: Colors.amber, size: 16),
                         const SizedBox(width: 4),
+<<<<<<< HEAD
                         Text(product.rating.toString()), // ใช้ข้อมูลจาก product
+=======
+                        Text(rating.toString()),
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                       ],
                     ),
                     const SizedBox(height: 10),
@@ -135,7 +168,11 @@ class ProductDetailPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
+<<<<<<< HEAD
                           product.price, // ใช้ข้อมูลจาก product
+=======
+                          price,
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                           style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,

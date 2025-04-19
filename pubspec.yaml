@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: ecoglam
+=======
+name: flutter_application_1
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,19 +34,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< HEAD
   sqflite: ^2.4.2
   path: ^1.9.1
+=======
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   lucide_icons: ^0.257.0
+<<<<<<< HEAD
   firebase_core: ^3.13.0
   cloud_firestore: ^5.6.6
   firebase_auth: ^5.5.2
   google_sign_in: ^5.0.7
   flutter_facebook_auth: ^5.0.0
   http: ^0.13.3
+=======
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +70,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+<<<<<<< HEAD
   fonts:
     - family: Inter
       fonts:
@@ -97,6 +108,22 @@ flutter:
     - assets/images/
 
 
+=======
+
+  # The following line ensures that the Material Icons font is
+  # in cluded with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  
+  # To add assets to your application, add an assets section, like this:
+  assets:
+     - assets/images/Skincare-Steps-scaled.jpg
+     - assets/images/dd371e0ad448a167b593581ee4380019.jpg
+     - assets/images/573b5df7d1348cf76478adb8936c4d46.jpg
+     - assets/images/OIP.jpg
+     
+  #   - images/a_dot_ham.jpeg
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

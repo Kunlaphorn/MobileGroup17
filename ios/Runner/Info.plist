@@ -5,7 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
+<<<<<<< HEAD
 	<string>Ecoglam</string>
+=======
+	<string>Flutter Application 1</string>
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +17,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
+<<<<<<< HEAD
 	<string>ecoglam</string>
+=======
+	<string>flutter_application_1</string>
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

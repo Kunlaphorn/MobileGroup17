@@ -15,7 +15,11 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+<<<<<<< HEAD
                BuildableName = "ecoglam.app"
+=======
+               BuildableName = "flutter_application_1.app"
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
                BlueprintName = "Runner"
                ReferencedContainer = "container:Runner.xcodeproj">
             </BuildableReference>
@@ -31,7 +35,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+<<<<<<< HEAD
             BuildableName = "ecoglam.app"
+=======
+            BuildableName = "flutter_application_1.app"
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -66,7 +74,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+<<<<<<< HEAD
             BuildableName = "ecoglam.app"
+=======
+            BuildableName = "flutter_application_1.app"
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -83,7 +95,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+<<<<<<< HEAD
             BuildableName = "ecoglam.app"
+=======
+            BuildableName = "flutter_application_1.app"
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ecoglam
+=======
+# flutter_application_1
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
 
 A new Flutter project.
 

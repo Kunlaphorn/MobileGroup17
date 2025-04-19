@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
@@ -17,6 +18,14 @@ void main() async {
         DefaultFirebaseOptions
             .currentPlatform, // ใช้ Firebase options สำหรับ platform ที่ใช้
   );
+=======
+import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
+import 'pages/search_page.dart';
+import 'pages/product_page.dart';
+
+void main() {
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
   runApp(const EcoGlamApp());
 }
 
@@ -30,6 +39,7 @@ class EcoGlamApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
+<<<<<<< HEAD
         fontFamily: 'Inter',
       ),
       debugShowCheckedModeBanner: false,
@@ -44,6 +54,13 @@ class EcoGlamApp extends StatelessWidget {
         '/cart': (context) => const CartPage(),
         // เพิ่มเส้นทางสำหรับ AccountPage
       },
+=======
+        fontFamily: 'Arial',
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
+      routes: {'/search': (context) => const SearchPage()},
+>>>>>>> fb9e8eb26864dd0d7e593d3b8db755f11f7df4c4
     );
   }
 }
