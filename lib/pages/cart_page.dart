@@ -4,8 +4,68 @@ void main() {
   runApp(const MaterialApp(home: CartPage()));
 }
 
-class CartPage extends StatelessWidget {
+class CartPage extends StatefulWidget {
   const CartPage({super.key});
+
+  @override
+  _CartPageState createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  // ใช้ตัวแปรนี้เพื่อเก็บข้อมูลสินค้าที่อยู่ในตะกร้า
+  List<Map<String, dynamic>> cartItems = [
+    {
+      'image': 'assets/images/dd371e0ad448a167b593581ee4380019.jpg',
+      'name': 'Madagascar Centella Ampoule',
+      'brand': 'SKIN1004',
+      'price': '฿ 478',
+      'quantity': 1, // เก็บจำนวนสินค้า
+    },
+    {
+      'image': 'assets/images/573b5df7d1348cf76478adb8936c4d46.jpg',
+      'name': 'Torriden Cica Serum',
+      'brand': 'Torriden',
+      'price': '฿ 629',
+      'quantity': 1, // เก็บจำนวนสินค้า
+    },
+    {
+      'image': 'assets/images/dd371e0ad448a167b593581ee4380019.jpg',
+      'name': 'Some by Mi Toner',
+      'brand': 'Some by Mi',
+      'price': '฿ 299',
+      'quantity': 1, // เก็บจำนวนสินค้า
+    },
+    {
+      'image': 'assets/images/573b5df7d1348cf76478adb8936c4d46.jpg',
+      'name': 'Face Mist',
+      'brand': 'Innisfree',
+      'price': '฿ 250',
+      'quantity': 1, // เก็บจำนวนสินค้า
+    },
+  ];
+
+  // ฟังก์ชันลบสินค้าออกจากตะกร้า
+  void _removeItem(int index) {
+    setState(() {
+      cartItems.removeAt(index);
+    });
+  }
+
+  // ฟังก์ชันเพิ่มจำนวนสินค้า
+  void _increaseQuantity(int index) {
+    setState(() {
+      cartItems[index]['quantity']++;
+    });
+  }
+
+  // ฟังก์ชันลดจำนวนสินค้า
+  void _decreaseQuantity(int index) {
+    setState(() {
+      if (cartItems[index]['quantity'] > 1) {
+        cartItems[index]['quantity']--;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,33 +139,6 @@ class CartPage extends StatelessWidget {
   }
 
   Widget _buildCartList() {
-    List<Map<String, String>> cartItems = [
-      {
-        'image': 'assets/images/dd371e0ad448a167b593581ee4380019.jpg',
-        'name': 'Madagascar Centella Ampoule',
-        'brand': 'SKIN1004',
-        'price': '฿ 478',
-      },
-      {
-        'image': 'assets/images/573b5df7d1348cf76478adb8936c4d46.jpg',
-        'name': 'Torriden Cica Serum',
-        'brand': 'Torriden',
-        'price': '฿ 629',
-      },
-      {
-        'image': 'assets/images/dd371e0ad448a167b593581ee4380019.jpg',
-        'name': 'Some by Mi Toner',
-        'brand': 'Some by Mi',
-        'price': '฿ 299',
-      },
-      {
-        'image': 'assets/images/573b5df7d1348cf76478adb8936c4d46.jpg',
-        'name': 'Face Mist',
-        'brand': 'Innisfree',
-        'price': '฿ 250',
-      },
-    ];
-
     return ListView.separated(
       itemCount: cartItems.length,
       separatorBuilder: (context, index) => const SizedBox(height: 12),
@@ -170,13 +203,20 @@ class CartPage extends StatelessWidget {
                         children: [
                           IconButton(
                             icon: const Icon(Icons.remove_circle_outline),
-                            onPressed: () {},
+                            onPressed:
+                                () => _decreaseQuantity(index), // ลดจำนวนสินค้า
                             iconSize: 20,
                           ),
-                          const Text("1", style: TextStyle(fontSize: 14)),
+                          Text(
+                            item['quantity'].toString(),
+                            style: const TextStyle(fontSize: 14),
+                          ),
                           IconButton(
                             icon: const Icon(Icons.add_circle_outline),
-                            onPressed: () {},
+                            onPressed:
+                                () => _increaseQuantity(
+                                  index,
+                                ), // เพิ่มจำนวนสินค้า
                             iconSize: 20,
                           ),
                         ],
@@ -186,7 +226,7 @@ class CartPage extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () => _removeItem(index), // เรียกฟังก์ชันเมื่อคลิกลบ
                 icon: const Icon(Icons.delete_outline),
                 color: Colors.red[300],
               ),

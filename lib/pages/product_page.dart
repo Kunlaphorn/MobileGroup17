@@ -157,7 +157,7 @@ class ProductDetailPage extends StatelessWidget {
                             ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFF9BCF53),
+                                backgroundColor: const Color(0xFFE9F3C7),
                                 foregroundColor: Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),

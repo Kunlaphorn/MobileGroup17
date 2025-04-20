@@ -3,13 +3,14 @@ class Product {
   final String price;
   final String image;
   final double rating;
+  final String description; // เพิ่ม field นี้
 
-  // Constructor
   Product({
     required this.name,
     required this.price,
     required this.image,
     required this.rating,
+    required this.description, // เพิ่มใน constructor
   });
 
   // Factory constructor to create a Product from Firestore data (Map)
@@ -19,11 +20,18 @@ class Product {
       price: data['price'] ?? '',
       image: data['image'] ?? '',
       rating: data['rating'] ?? 0.0,
+      description: data['description'] ?? '',
     );
   }
 
   // Method to convert Product object to a map
   Map<String, dynamic> toMap() {
-    return {'name': name, 'price': price, 'image': image, 'rating': rating};
+    return {
+      'name': name,
+      'price': price,
+      'image': image,
+      'rating': rating,
+      'description': description, // ใช้ลูกน้ำแทนการใช้ ":" ที่ผิด
+    };
   }
 }

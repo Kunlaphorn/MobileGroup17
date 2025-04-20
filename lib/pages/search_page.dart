@@ -19,24 +19,28 @@ class _SearchPageState extends State<SearchPage> {
       price: "129 ฿",
       image: "assets/images/dd371e0ad448a167b593581ee4380019.jpg",
       rating: 5.0,
+      description: "Description for centella", // เพิ่มคำอธิบาย
     ),
     Product(
       name: "Anua - peach 70",
       price: "319 ฿",
       image: "assets/images/573b5df7d1348cf76478adb8936c4d46.jpg",
       rating: 5.0,
+      description: "Description for Anua - peach 70", // เพิ่มคำอธิบาย
     ),
     Product(
       name: "innisfree",
       price: "219 ฿",
       image: "assets/images/in.jpg",
       rating: 5.0,
+      description: "Description for innisfree", // เพิ่มคำอธิบาย
     ),
     Product(
       name: "Dr.G",
       price: "359 ฿",
       image: "assets/images/drg.jpg",
       rating: 4.0,
+      description: "Description for Dr.G", // เพิ่มคำอธิบาย
     ),
   ];
 
@@ -173,6 +177,7 @@ class _SearchPageState extends State<SearchPage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              // ใช้ TextOverflow.ellipsis เพื่อจัดการกับการ overflow ของข้อความ
                               Text(
                                 product.name,
                                 style: const TextStyle(
