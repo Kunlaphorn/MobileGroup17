@@ -23,7 +23,6 @@ class _PaymentPageState extends State<PaymentPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    // ตรวจสอบว่า ModalRoute มี arguments ส่งมาหรือไม่
     final args =
         ModalRoute.of(context)!.settings.arguments
             as List<Map<String, dynamic>>?;
@@ -184,7 +183,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 Navigator.pushReplacementNamed(
                   context,
                   '/home',
-                ); // ไปที่หน้า Home
+                ); 
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF81B971),
