@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ecoglam/pages/product_page.dart'; // นำเข้า ProductDetailPage
-import 'package:ecoglam/models/product_model.dart'; // นำเข้า Product model
-
+import 'package:ecoglam/pages/product_page.dart'; 
+import 'package:ecoglam/models/product_model.dart'; 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
 
@@ -20,7 +19,7 @@ class _SearchPageState extends State<SearchPage> {
       price: "129 ฿",
       image: "assets/images/dd371e0ad448a167b593581ee4380019.jpg",
       rating: 5.0,
-      description: "Description for centella", // เพิ่มคำอธิบาย
+      description: "Description for centella", 
     ),
     Product(
       id: '2',
@@ -28,7 +27,7 @@ class _SearchPageState extends State<SearchPage> {
       price: "319 ฿",
       image: "assets/images/573b5df7d1348cf76478adb8936c4d46.jpg",
       rating: 5.0,
-      description: "Description for Anua - peach 70", // เพิ่มคำอธิบาย
+      description: "Description for Anua - peach 70", 
     ),
     Product(
       id: '3',
@@ -36,7 +35,7 @@ class _SearchPageState extends State<SearchPage> {
       price: "219 ฿",
       image: "assets/images/in.jpg",
       rating: 5.0,
-      description: "Description for innisfree", // เพิ่มคำอธิบาย
+      description: "Description for innisfree", 
     ),
     Product(
       id: '4',
@@ -44,7 +43,7 @@ class _SearchPageState extends State<SearchPage> {
       price: "359 ฿",
       image: "assets/images/drg.jpg",
       rating: 4.0,
-      description: "Description for Dr.G", // เพิ่มคำอธิบาย
+      description: "Description for Dr.G", 
     ),
   ];
 
@@ -96,7 +95,7 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         onChanged: (value) {
                           setState(() {
-                            // อัปเดตหน้าจอเมื่อกรอกข้อความ
+                            
                           });
                         },
                       ),
@@ -115,11 +114,11 @@ class _SearchPageState extends State<SearchPage> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
-                  childAspectRatio: 0.75, // ปรับขนาดให้เหมาะสม
+                  childAspectRatio: 0.75, 
                 ),
                 itemBuilder: (context, index) {
                   final product =
-                      filteredProductList[index]; // ใช้ filteredProductList
+                      filteredProductList[index]; 
 
                   return GestureDetector(
                     onTap: () {
@@ -129,7 +128,7 @@ class _SearchPageState extends State<SearchPage> {
                           builder:
                               (_) => ProductDetailPage(
                                 product:
-                                    product, // ส่ง Product ไปที่หน้า ProductDetailPage
+                                    product, 
                               ),
                         ),
                       );
@@ -186,7 +185,7 @@ class _SearchPageState extends State<SearchPage> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // ใช้ TextOverflow.ellipsis เพื่อจัดการกับการ overflow ของข้อความ
+                          
                                 Text(
                                   product.name,
                                   style: const TextStyle(
@@ -194,7 +193,7 @@ class _SearchPageState extends State<SearchPage> {
                                     fontSize: 12,
                                   ),
                                   overflow: TextOverflow.ellipsis,
-                                  maxLines: 2, // จำกัดจำนวนบรรทัด
+                                  maxLines: 2, 
                                 ),
                                 const SizedBox(height: 4),
                                 Row(
