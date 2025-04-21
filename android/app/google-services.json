@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "24208070412",
+    "project_id": "ecoglam-373a4",
+    "storage_bucket": "ecoglam-373a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24208070412:android:ad4079d07ed66f3865db29",
+        "android_client_info": {
+          "package_name": "com.example.ecoglam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfkfxaS-KN9FONfXBgUZ7q9v6mDZDuAQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
