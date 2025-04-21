@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/images/logo.png',
-                    width: 40, // ปรับขนาดตามต้องการ
+                    width: 40, 
                     height: 40,
                   ),
                   const SizedBox(width: 10),
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                     Navigator.pushNamed(
                       context,
                       '/search',
-                    ); // ใช้เส้นทางในการนำทาง
+                    ); 
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
