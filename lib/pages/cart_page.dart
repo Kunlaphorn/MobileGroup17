@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ecoglam/pages/payment_pages.dart';
 import 'package:ecoglam/pages/home_page.dart';
 import 'package:ecoglam/pages/account_page.dart';
-import 'package:ecoglam/pages/product_page.dart'; // ใช้ ProductDetailPage จากไฟล์นี้
-import 'package:ecoglam/models/product_model.dart'; // ใช้ Product จากตรงนี้
+import 'package:ecoglam/pages/product_page.dart'; 
+import 'package:ecoglam/models/product_model.dart'; 
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
